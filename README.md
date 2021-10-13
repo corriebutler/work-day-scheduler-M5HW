@@ -15,6 +15,7 @@ https://corriebutler.github.io/work-day-scheduler-M5HW/
 Align Self Center for Time Rows: https://stackoverflow.com/questions/44717942/bootstrap-how-to-center-content-vertically-within-a-column
 Made currentDay an active clock: https://stackoverflow.com/questions/66648322/live-clock-moment-js
 Fixing the load task function to check hours: https://api.jquery.com/each/ 
+Timeslots to numbers for color comparison: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt & https://www.w3schools.com/jquery/html_attr.asp
 
 
 

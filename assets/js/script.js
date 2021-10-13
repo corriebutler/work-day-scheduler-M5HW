@@ -1,7 +1,39 @@
 // Declaring variables
 
-// Audit Tasks
+// Load the save button icon
+$('.saveBtn')
+    .html('<i class="far fa-save fa-lg"></i>')
 
+// Main Date and Time in Header
+var currentTime = moment().format('MMMM Do, YYYY - hh:mm a');
+$('#currentDay')
+    .text(currentTime);
+setInterval(function() {
+    $('#currentDay').text(moment().format('MMMM Do, YYYY - hh:mm a'));
+}, 45000);
+
+// Audit Tasks
+var auditTimes = function() {
+    var rightNow = moment().format('H');
+    var rightNowInt = parseInt(rightNow);
+
+    $('.hour').each(function() {
+    var timeSlot = parseInt($(this).attr('id'));
+    console.log(timeSlot);
+    console.log(rightNowInt);
+
+    if (timeSlot === rightNowInt) {
+        $('textarea').addClass('present');
+    }
+    else if (timeSlot > rightNowInt) {
+        $('textarea').addClass('future');
+    }
+    else if (timeSlot < rightNowInt) {
+        $('textarea').addClass('past');
+    };
+});
+    
+};
 
 // Load the tasks back in
 var loadTaskDescriptions = function () {
@@ -11,10 +43,10 @@ var loadTaskDescriptions = function () {
         $('.hour').each(function() {
         if ($(this).text() === loadTasks[i].hour) {
             $(this).siblings('textarea').text(loadTasks[i].details);
-            console.log('this works');
         }
     });  
     }
+    auditTimes();
 };
 
 // Save task descriptions
@@ -34,16 +66,6 @@ $('.saveBtn').on('click', function savingTasks() {
     localStorage.setItem("savedTasks", JSON.stringify(tasks));
 });
 
-// Main Date and Time in Header
-var currentTime = moment().format('MMMM Do, YYYY - hh:mm a');
-$('#currentDay')
-    .text(currentTime);
-setInterval(function() {
-    $('#currentDay').text(moment().format('MMMM Do, YYYY - hh:mm a'));
-}, 45000);
 
-// Load the save button icon
-$('.saveBtn')
-    .html('<i class="far fa-save fa-lg"></i>')
 
 loadTaskDescriptions ();
