@@ -1,5 +1,3 @@
-// Declaring variables
-
 // Load the save button icon
 $('.saveBtn')
     .html('<i class="far fa-save fa-lg"></i>')
