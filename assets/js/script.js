@@ -64,6 +64,10 @@ $('.saveBtn').on('click', function savingTasks() {
     tasks.push(taskSave);
 
     localStorage.setItem("savedTasks", JSON.stringify(tasks));
+
+    $('#saved-task')
+        .text('Your Task Was Saved!')
+        .html('<div class="task-saved">Your task was saved in <p class="local-storage">local storage</p> <i class="fas fa-check"></i></div>')
 });
 
 
