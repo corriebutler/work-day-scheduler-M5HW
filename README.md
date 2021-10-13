@@ -4,6 +4,7 @@ A simple scheduling tool for an individual's workday. This tool allows for sched
 
 ## Visual
 
+![image](https://user-images.githubusercontent.com/84928781/137162619-93e09110-1ab0-4f8f-8450-c04c2ac9e48a.png)
 
 
 
