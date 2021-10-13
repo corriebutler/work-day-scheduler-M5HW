@@ -36,13 +36,15 @@ var auditTimes = function() {
 // Load the tasks back in
 var loadTaskDescriptions = function () {
     var loadTasks = JSON.parse(localStorage.getItem('savedTasks'));
-    
-    for (var i = 0; i < loadTasks.length; i++) {
-        $('.hour').each(function() {
-        if ($(this).text() === loadTasks[i].hour) {
-            $(this).siblings('textarea').text(loadTasks[i].details);
-        }
-    });  
+
+    if (loadTasks) {
+        for (var i = 0; i < loadTasks.length; i++) {
+            $('.hour').each(function() {
+            if ($(this).text() === loadTasks[i].hour) {
+                $(this).siblings('textarea').text(loadTasks[i].details);
+            };
+        });  
+    }
     }
     auditTimes();
 };
